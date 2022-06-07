@@ -1,15 +1,19 @@
-class UsersController < ApplicationController
-  def new
-    @user = User.new
-  end
+<h1>New User Account</h1>
 
-  def create
-    @user = User.new
-    @user["first_name"] = params["user"]["first_name"]
-    @user["last_name"] = params["user"]["last_name"]
-    @user["email"] = params["user"]["email"]
-    @user["password"] = params["user"]["password"]
-    @user.save
-    redirect_to "/"
-  end
-end
+<%= form_with :model => @user do |form| %>
+  <p>
+    <%= form.label "username" %>
+    <%= form.text_field "username" %>
+  </p>
+  <p>
+    <%= form.label "email" %>
+    <%= form.text_field "email" %>
+  </p>
+  <p>
+    <%= form.label "password" %>
+    <%= form.text_field "password" %>
+  </p>
+  <p>
+    <%= form.submit "Sign up", class: "btn btn-primary" %>
+  </p>
+<% end %>

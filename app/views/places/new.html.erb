@@ -2,10 +2,19 @@
 
 <%= form_with :model => @place do |form| %>
   <p>
-    <%= form.label "name" %>
-    <%= form.text_field "name" %>
+    <%= form.label "Title" %>
+    <%= form.text_field "Description" %>
+  </p>
+  <p>
+    <%= form.label "Posted_On" %>
+    <%= form.text_field "Posted_On" %>
+  </p>
+   <p>
+    <%= form.label "uploaded_image" %>
+    <%= form.text_field "uploaded_image" %>
   </p>
   <p>
     <%= form.submit %>
+    <%= form.submit "Create Post", class: "btn btn-primary"%>
   </p>
 <% end %>
